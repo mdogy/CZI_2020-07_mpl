@@ -1,0 +1,176 @@
+\documentclass[12pt,letterpaper]{article}  % min is 11pt
+
+\usepackage[sort&compress,numbers]{natbib}
+\usepackage[margin=1in,letterpaper]{geometry}  % min is .5 in
+\usepackage[shortlabels]{enumitem}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{footmisc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{times}
+\rhead{\emph{CZI: Essential Open Source Software for Science}}
+\lhead{\emph{Matplotlib: Scientific Visualization}}
+%\linespread{1.5}
+
+\setlist[itemize]{noitemsep, topsep=0pt}
+\setlist[enumerate]{noitemsep}
+
+\pagestyle{fancy}
+
+\begin{document}
+\title{Matplotlib - Foundation of Scientific Visualization in Python}
+\author{}
+\maketitle
+
+\section{Goals}
+
+Matplotlib\cite{Hunter:2007} is the fundamental
+data visualization library for the scientific Python Ecosystem, used
+in conjunction with other foundational tools like NumPy and
+SciPy \cite{Jones2001,2020SciPy-NMeth} by over a million\footnote{Estimated from \texttt{pypi}
+and \texttt{conda} download numbers and unique monthly visitors to the documentation website} users.
+Matplotlib is used across a wide spectrum of fields, including bio-medical imaging,
+microscopy, and genomics \cite{Carpenter2006,Wolf2018,10.7717/peerj.453,
+  Segata2011,10.1371/journal.pgen.1000695,HASHIMSHONY2012666,
+  10.1093/bioinformatics/bts480,Carlile2014,Laganowsky2014,Jiangaac9462,
+  10.3389/fninf.2014.00014}, and we expect this user base to grow as Python
+  continues to be adopted in the life sciences. %%?citation needed that this still happening?
+Matplotlib has been actively developed and maintained by a vibrant,
+primarily volunteer, community over the last 17 years on mostly volunteer effort; however, given
+the scale, scope, and importance of the project, it is critical that we
+continue to supplement the volunteer effort with supported developers.
+
+This proposal asks for approximately 2.5 person-years of developer effort to support:
+
+\begin{enumerate}[label=\alph*),noitemsep]
+  \item maintaining the library and contributor base;
+  \item fostering community, documentation, and tools to grow a rich ecosystem of domain-specific libraries built on Matplotlib;
+  \item and beginning the work of evolving the core architecture.
+\end{enumerate}
+
+\subsection{Fostering downstream projects}
+\label{sec:downstream}
+
+The most common visualizations in a domain need to be fluid for
+the end-practitioners, with the ``obvious'' customization options
+exposed. Much of the domain-specific specialization is carried in the
+structure, semantics and assumptions of the data, and in the standard
+visualizations of the domain. These specializations can vary widely,
+in contradictory ways, between domains. Because no high-level API can
+simultaneously satisfy all of the visualization needs, there will
+always be a need for domain-specific visualization libraries.
+
+Through maintaining the code base and developing the architecture for
+the next version, we will generate API guidelines so that downstream
+libraries inter-operate well and ``feel'' similar. By building out
+community, documentation, and tools, we will provide downstream
+library developers resources for efficiently building their tools with
+Matplotlib.
+
+We will continue to engage with libraries in the life sciences that
+are using Matplotlib for their visualization to ensure that we are
+addressing their problems. We will collaborate on prototyping an
+end-to-end solution, including data, plot representations, and a
+high-level user API.  In particular we plan to engage with
+\texttt{scikit-learn}\footnote{A Essential Open Source Software for
+Science Round 1 grantee}, \texttt{CellProfiler}\footnote{Currently
+funded by CZI\label{f:czi}}, \texttt{scanpy}\footref{f:czi},
+\texttt{starfish}\footref{f:czi}, \texttt{nipy}, and
+\texttt{scikit-image}\footref{f:czi}
+\cite{10.7717/peerj.453,Carpenter2006, Wolf2018}.  Our goal is to
+domain specific libraries like them easier to write.
+
+\subsection{Maintenance and Growth of Library and Community}
+
+Matplotlib is a community-driven project, but we have grown to the
+point where we need supported developers with the time to organize,
+plan, and make decisions.  To maintain Matplotlib's health and grow
+the library we need to:
+
+%% these can probably be shortened further, to just stuff like Triage and on board
+%%since explainations are in text
+\begin{itemize}[noitemsep]
+\item promptly triage and review newly opened Issues and PRs;
+\item fix critical bugs and regressions;
+\item implement new features to adapt to the growing needs of science;
+\item maintain backward compatibility and extensively document intentional changes;
+\item annd on-board new contributors to sustain and diversify developer team;
+\end{itemize}
+
+Supported developers has allowed us to begin to address Issues an PRs
+at a faster rate than they are being submitted and reduce our backlog.
+From early March when Elliott started we have been reducing the number
+of open PRs by an average of just over 4 per week while increasing the
+total through put from 40-50 to XYZ.  This work has included finishing
+long stalled documentation and maintenance work that likely would not
+have happened without the current support.
+
+The supported developers will continue to complement and facilitate,
+not replace, crucial volunteer work.  The goal is to grow and
+sustaining a diverse community of volunteer and paid expert
+contributors.
+
+
+\section{Expected outcomes, success evaluation and metrics}
+\subsection{Maintenance}
+
+Quantitatively evaluating maintenance work can be tricky---some Issues
+or PRs take minutes to review while others can take days to months of
+effort---but we believe that there is value at looking at the number
+of open Issues and PRs.  We will reduce this number by closing Issues
+and PRs faster than they are opened until a reasonable equilibrium is
+reached. With the introduction of paid developers, NumPy has had
+success in reversing the ever increasing trends in the number of open
+Issues and Pull
+Requests\footnote{https://github.com/seberg/numpy\_talk\_plots/blob/master/plots\_used\_in\_talk/issues\_prs\_delta.pdf}. Once
+the backlog is handled, we aim to have all new Issues and Pull
+Requests labeled within 7 days of being opened.
+
+Improved contributor onboarding should yield an increase in the
+percentage of new contributor PRs that get resolved, a decrease in the
+amount of time it takes for resolution, and an increase the number of
+PRs submitted by non-core developers.
+
+
+\section{Work Plan}
+
+We request funding for the following:
+
+\begin{itemize}[noitemsep]
+
+\item Fund Thomas Caswell's position at 40\%.  Caswell is the Project Leader of Matplotlib and an Associate
+  Computational Scientist at Brookhaven National Laboratory.  His
+  long-term experience, API design expertise, and project leadership
+  are critical to the success of the work in this proposal.  He will work
+  on all aspects of the proposal.
+\item Hannah Aizenman's position for 12 months.  Aizenman has
+  been a core developer of Matplotlib for four years.
+\item Summer support for Michael Grossberg, Aizenman's PhD advisor.
+\item 12 months of Elliott Sales de Andrade as a Research Software
+  Engineer to support all aspects of the proposal but focusing on
+  maintenance, prototyping, and engaging down-stream libraries.  de Andrade is a
+  a long time Matplotlib contributor and is currently employed
+\item Travel to key conferences (such as SciPy or PyCon) and for in-person meetings
+\item Hardware and services to support the
+\end{itemize}
+
+We want to use this dedicated effort to leverage and empower the
+Matplotlib developer community.  In terms of direct work, equal
+amounts of time will be spent mentoring and reviewing code from
+community members and directly implementing features or fixing bugs.
+All of the design work will be done in public with input from the
+community. Part of this work is to develop the project Road Map.
+
+
+
+\section{Existing Support}
+CZI round 1
+
+
+
+\clearpage
+\bibliographystyle{ieeetr} % or named ?
+\bibliography{biblo}
+
+\end{document}
