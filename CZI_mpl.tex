@@ -41,7 +41,7 @@ primarily volunteer, community over the last 17 years on mostly volunteer effort
 the scale, scope, and importance of the project, it is critical that we
 continue to supplement the volunteer effort with supported developers.
 
-This proposal asks for approximately 2.5 person-years of developer effort to support:
+This proposal asks for approximately 2.4 person-years of developer effort to support:
 
 \begin{enumerate}[label=\alph*),noitemsep]
   \item maintaining the library and contributor base;
@@ -49,37 +49,6 @@ This proposal asks for approximately 2.5 person-years of developer effort to sup
   \item and beginning the work of evolving the core architecture.
 \end{enumerate}
 
-\subsection{Fostering downstream projects}
-\label{sec:downstream}
-
-The most common visualizations in a domain need to be fluid for
-the end-practitioners, with the ``obvious'' customization options
-exposed. Much of the domain-specific specialization is carried in the
-structure, semantics and assumptions of the data, and in the standard
-visualizations of the domain. These specializations can vary widely,
-in contradictory ways, between domains. Because no high-level API can
-simultaneously satisfy all of the visualization needs, there will
-always be a need for domain-specific visualization libraries.
-
-Through maintaining the code base and developing the architecture for
-the next version, we will generate API guidelines so that downstream
-libraries inter-operate well and ``feel'' similar. By building out
-community, documentation, and tools, we will provide downstream
-library developers resources for efficiently building their tools with
-Matplotlib.
-
-We will continue to engage with libraries in the life sciences that
-are using Matplotlib for their visualization to ensure that we are
-addressing their problems. We will collaborate on prototyping an
-end-to-end solution, including data, plot representations, and a
-high-level user API.  In particular we plan to engage with
-\texttt{scikit-learn}\footnote{A Essential Open Source Software for
-Science Round 1 grantee}, \texttt{CellProfiler}\footnote{Currently
-funded by CZI\label{f:czi}}, \texttt{scanpy}\footref{f:czi},
-\texttt{starfish}\footref{f:czi}, \texttt{nipy}, and
-\texttt{scikit-image}\footref{f:czi}
-\cite{10.7717/peerj.453,Carpenter2006, Wolf2018}.  Our goal is to
-domain specific libraries like them easier to write.
 
 \subsection{Maintenance and Growth of Library and Community}
 
@@ -111,6 +80,23 @@ not replace, crucial volunteer work.  The goal is to grow and
 sustaining a diverse community of volunteer and paid expert
 contributors.
 
+\subsubsection{Homogenization of the Application Programming Interface (API)}
+\label{sec:api_hom}
+% should we merge this into the next section?
+
+The library has grown organically over time through the contributions
+of over 1,000 individuals, accumulating many small inconsistencies in
+the API.  For example, similar methods have different argument order,
+e.g., \texttt{ax.text(x, y, s)} vs \texttt{ax.annotation(s, (x, y))},
+and some keyword (named) arguments can be singular or plural, e.g.,
+\texttt{color} vs \texttt{colors}.  These subtle issues add friction
+for users, but are hard to fix without breaking existing code for
+someone in our large user base.  Our goal is to minimize breakage,
+while still unifying the API. Taking into account \textbf{all} of the
+public interfaces, we will carefully consider which to leave as they
+are, which to deprecate, and which to replace.  As with the maintenance
+tasks described above, this is an on-going effort.
+
 
 \section{Expected outcomes, success evaluation and metrics}
 \subsection{Maintenance}
@@ -118,19 +104,49 @@ contributors.
 Quantitatively evaluating maintenance work can be tricky---some Issues
 or PRs take minutes to review while others can take days to months of
 effort---but we believe that there is value at looking at the number
-of open Issues and PRs.  We will reduce this number by closing Issues
-and PRs faster than they are opened until a reasonable equilibrium is
-reached. With the introduction of paid developers, NumPy has had
-success in reversing the ever increasing trends in the number of open
-Issues and Pull
-Requests\footnote{https://github.com/seberg/numpy\_talk\_plots/blob/master/plots\_used\_in\_talk/issues\_prs\_delta.pdf}. Once
-the backlog is handled, we aim to have all new Issues and Pull
-Requests labeled within 7 days of being opened.
+of open Issues and PRs.  Once fully staffed we have been closing
+Issues and PRs faster than they are opened and are still approaching
+an equilibrium as time of this writing.  We anticipate to have reached
+a reasonable equilibrium by end of the current support.  Continued
+support will maintain that equilibrium and keep all new Issues and
+Pull Requests labeled within 7 days of being opened.  With only
+volunteer effort we expect to regress back to accumulating both open
+issues and PRs on a month over month basis
 
-Improved contributor onboarding should yield an increase in the
-percentage of new contributor PRs that get resolved, a decrease in the
-amount of time it takes for resolution, and an increase the number of
-PRs submitted by non-core developers.
+\subsection{Implementing Architecture Overhaul}
+
+
+\subsection{Fostering downstream projects}
+\label{sec:downstream}
+
+The most common visualizations in a domain need to be fluid for the
+end-practitioners, with the ``obvious'' customization options exposed.
+Much of the domain-specific specialization is carried in the
+assumptions and structure of the data, and in the standard
+visualizations of the domain.  However, these specializations vary
+widely, often in contradictory ways, between domains.  Because no
+high-level API can simultaneously satisfy all of the visualization
+needs, there will always be a need for domain-specific visualization
+libraries.  Rather than trying to be a single library to solve
+everyone's problems our goal is to make domain specific libraries
+easier to write.
+
+We will continue to maintain and expand the API guidance for
+downstream libraries help them inter-operate well and ``feel''
+similar.  As we start to build implement the new architecture
+we will start to work with a handful of downstream
+libraries to validate our design outside of the core library.
+
+We will continue to engage with libraries in the life sciences that
+are using Matplotlib for their visualization. We will collaborate on
+turning the prototypes into production ready an end-to-end solution,
+including data, plot representations, and a high-level user API.  In
+particular we plan to engage with \texttt{scikit-learn}\footnote{A
+Essential Open Source Software for Science Round 1 grantee},
+\texttt{CellProfiler}\footnote{Currently funded by CZI\label{f:czi}},
+\texttt{scanpy}\footref{f:czi}, \texttt{starfish}\footref{f:czi},
+\texttt{nipy}, and \texttt{scikit-image}\footref{f:czi}
+\cite{10.7717/peerj.453,Carpenter2006, Wolf2018}.
 
 
 \section{Work Plan}
@@ -150,7 +166,7 @@ We request funding for the following:
 \item 12 months of Elliott Sales de Andrade as a Research Software
   Engineer to support all aspects of the proposal but focusing on
   maintenance, prototyping, and engaging down-stream libraries.  de Andrade is a
-  a long time Matplotlib contributor and is currently employed
+  a long time Matplotlib contributor.
 \item Travel to key conferences (such as SciPy or PyCon) and for in-person meetings
 \item Hardware and services to support the
 \end{itemize}
@@ -160,12 +176,14 @@ Matplotlib developer community.  In terms of direct work, equal
 amounts of time will be spent mentoring and reviewing code from
 community members and directly implementing features or fixing bugs.
 All of the design work will be done in public with input from the
-community. Part of this work is to develop the project Road Map.
+community. Part of this work is to continue to develop the project
+Road Map.
 
 
 
 \section{Existing Support}
-CZI round 1
+
+ - CZI round 1
 
 
 
