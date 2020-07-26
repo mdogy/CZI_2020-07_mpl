@@ -79,19 +79,63 @@ year to this effort.
 > training), specify how these activities will be organized, the
 > target audience, and expected outcomes (maximum of 750 words)
 
-A core component of the proposed work is the continued maintenance of the
-library.
+A core component of the proposed work is the continued maintenance of
+the library. This is a very broad scope of work that includes every
+thing from fixing critical bugs, reviewing Pull Requests, triaging and
+addressing bug reports, tagging release, and keeping the continuous
+integration services running.  While critical to keeping the project
+healthy and individually small, it is difficult to accomplish them in
+a timely manner with only volunteer effort.  These tasks are
+frequently reactive, you can not plan for a critical bug to be found
+or a dependency to change, time critical, and not always fun.  By
+making sure these tasks are done we will improve the experience for
+both new and existing contributors and improve the rate at which we
+onboard new contributors to the project.  We propose to devote three
+quarters of a developers time to handling these tasks.
+
+In addition to the reactive work there are incremental improvements
+that are bigger in scope that can easily be done with volunteer
+effort.  These projects can range from fixing long standing rendering
+artifacts, deep-dive documentation into the why of the API design,
+improving performance, to new user facing features.  For example
+these are projects at the scale of adding color-blind filters to all of
+the user interfaces so users can preview their visualizations.  In addition
+to the technical work of adding the filter and UI code we also need to
+do research to make sure we are doing it correctly.  We propose devoting
+a quarter of a developer to these small projects.
+
+Building on what we have learned in the past year working on re-designing the
+low-level architecture we will :
+
+- Finish architecture development & start to implement in core library
+- start to re-design user API in a way that can make the most of the
+  improved internal structure
+
+
+The most common visualizations in a domain need to be fluid for the
+end-practitioners, with the "obvious" customization options exposed.
+Much of the domain-specific specialization is carried in the
+structure, semantics and assumptions of the data, and in the standard
+visualizations of the domain.  These specializations can vary widely,
+in contradictory ways, between domains.  Because no high-level API can
+simultaneously satisfy all of the visualization needs, there will
+always be a need for domain-specific visualization libraries.  We will
+continue to work with down-stream libraries to make sure that we are
+able to support them to support their users both in terms of
+implementing data sources, artists, and user API.
 
 - continue maintenance work
   - review work
   - bug triage
 - improve new contributor on-boarding
+- Finish architecture development & start to implement in core library
+- start to re-design user API in a way that can make the most of the
+  improved internal structure
 - mid-sized new features
   - color blind filter
   - rendering accuracy improvements
   - performance
-- Finish architecture development & start to implement in core library
-- re-design user API
+
 - work with down-stream libraries to use data sources
 
 ## Milestones and Deliverables
@@ -156,5 +200,7 @@ tool for the job.
 > contributors and audience. Please see examples from successful second
 > cycle applications ​(maximum of 250 words)
 
-The Matplotlib project is committed to being an open and welcoming project
-where everyone
+The Matplotlib project is committed to being an open and welcoming
+project.  It is critical that all contributors, independent of
+experience level both in general and with the project, feels safe to
+make mistakes, be wrong, and learn.
