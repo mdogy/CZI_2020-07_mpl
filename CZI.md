@@ -9,14 +9,16 @@ While hiring took longer than expected, since Elliott Sales de Andrade
 started (mid-mach) we have hit our target of a net reduction of open
 PRs by 50/quarter, and are making progress on reducing the number of
 open issues.  Our initial estimates of the effort per issue closed was
+[this sentence needs to be completed]
 to Several mid-sized high-impact projects (documentation, js
 modernization, and semantic Axes layout) have been merged that would
 not have happened without this support.  In addition to the above work
 we have done 2 feature release and 5 bug-fix releases since January
 2020.
 
-> paragraph on datasource work
+We created a discourse to facilitate conversations with users and drafted new code and community contributor onboarding guidelines and (have seen an increase in new contributors?)
 
+While building the initial prototype, our priority shifted from reviewing the architecture of other libraries to developing the theoretical underpinnings of the new architecture Subsequent iterations have tightly coupled the prototype implementation to the developing architecture to avoid drifting due to immediate technical needs. We prioritized structured 2D array like data to ensure we do not break existing functionality. 
 
 
 ## Proposal Purpose
