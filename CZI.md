@@ -15,8 +15,9 @@ not have happened without this support.  In addition to the above work
 we have done 2 feature release and 5 bug-fix releases since January
 2020.
 
-> paragraph on datasource work
+We created a discourse to facilitate conversations with users and drafted new code and community contributor onboarding guidelines and (have seen an increase in new contributors?)
 
+While building the initial prototype, our priority shifted from reviewing the architecture of other libraries to developing the theoretical underpinnings of the new architecture Subsequent iterations have tightly coupled the prototype implementation to the developing architecture to avoid drifting due to immediate technical needs. We prioritized structured 2D array like data to ensure we do not break existing functionality. 
 
 
 ## Proposal Purpose
