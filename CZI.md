@@ -202,5 +202,12 @@ tool for the job.
 
 The Matplotlib project is committed to being an open and welcoming
 project.  It is critical that all contributors, independent of
-experience level both in general and with the project, feels safe to
-make mistakes, be wrong, and learn.
+experience level both in general and with the project, feel safe to
+make mistakes, be wrong, and learn. We embody these values in our 
+interactions on github, our community discussion forum (discourse) 
+and in our social media. In our effort to be welcoming, we have also 
+worked at being more explicit about how the project operates and our 
+norms and values. To this end, we have put major effort into documenting 
+our governance, defining leadership roles, and specificying expectations 
+for new code and community contributors. We hope this explicitness will 
+empower people to make more informed decisions about participating in open source. 
