@@ -9,6 +9,7 @@ While hiring took longer than expected, since Elliott Sales de Andrade
 started (mid-mach) we have hit our target of a net reduction of open
 PRs by 50/quarter, and are making progress on reducing the number of
 open issues.  Our initial estimates of the effort per issue closed was
+[this sentence needs to be completed]
 to Several mid-sized high-impact projects (documentation, js
 modernization, and semantic Axes layout) have been merged that would
 not have happened without this support.  In addition to the above work
