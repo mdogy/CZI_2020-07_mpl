@@ -6,7 +6,7 @@
 > 95 words
 
 While hiring took longer than expected, since Elliott Sales de Andrade
-started (mid-mach) we have hit our target of a net reduction of open
+started (mid-March) we have hit our target of a net reduction of open
 PRs by 50/quarter, and are making progress on reducing the number of
 open issues.  Our initial estimates of the effort per issue closed was
 [this sentence needs to be completed]
